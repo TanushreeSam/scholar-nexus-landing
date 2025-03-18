@@ -4,6 +4,7 @@ import { BookOpen, Award, BookMarked } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import SectionObserver from '@/components/SectionObserver';
+import Navbar from '@/components/Navbar';
 
 const Biography = () => {
   useEffect(() => {
@@ -11,7 +12,8 @@ const Biography = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background pt-24">
+    <div className="min-h-screen bg-background">
+      <Navbar />
       <div className="container mx-auto px-4 md:px-6 py-8">
         <SectionObserver>
           <div className="max-w-4xl mx-auto">
