@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import SectionObserver from '@/components/SectionObserver';
@@ -129,7 +128,7 @@ const Index = () => {
                 </p>
                 
                 <div className="pt-4 flex flex-wrap gap-4">
-                  <Button variant="outline" className="border-navy-700 text-navy-700 hover:bg-navy-50 flex items-center gap-2">
+                  <Button variant="outline" className="border-navy-700 text-navy-700 hover:bg-navy-50 flex items-center gap-2" onClick={() => window.location.href = '/biography'}>
                     <User size={16} />
                     Full Biography
                   </Button>
@@ -825,3 +824,6 @@ const YouTube = (props: any) => {
 };
 
 export default Index;
+
+
+

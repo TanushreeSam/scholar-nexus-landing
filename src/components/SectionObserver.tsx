@@ -44,12 +44,6 @@ const SectionObserver: React.FC<SectionObserverProps> = ({ children, className =
       }}
     >
       {children}
-      <style jsx>{`
-        .in-view {
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
-      `}</style>
     </div>
   );
 };
