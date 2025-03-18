@@ -16,8 +16,6 @@ const SectionObserver: React.FC<SectionObserverProps> = ({ children, className =
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
-          // Once the animation has played, no need to observe any more
-          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
@@ -38,8 +36,20 @@ const SectionObserver: React.FC<SectionObserverProps> = ({ children, className =
   }, []);
   
   return (
-    <div ref={sectionRef} className={`opacity-0 transform translate-y-10 transition-all duration-700 ease-out ${className}`}>
+    <div 
+      ref={sectionRef} 
+      className={`opacity-0 transform translate-y-10 transition-all duration-700 ease-out ${className}`}
+      style={{ 
+        transition: 'opacity 0.7s ease-out, transform 0.7s ease-out'
+      }}
+    >
       {children}
+      <style jsx>{`
+        .in-view {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+      `}</style>
     </div>
   );
 };

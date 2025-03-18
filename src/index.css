@@ -99,4 +99,20 @@
   .event-card {
     @apply bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 border-t-4 border-gold-500;
   }
+  
+  /* Add this new rule for the section observer animation */
+  .in-view {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  
+  @keyframes reveal-right {
+    from {
+      width: 0;
+    }
+    to {
+      width: 6rem; /* 24px */
+    }
+  }
 }
+
