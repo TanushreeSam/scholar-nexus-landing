@@ -1,10 +1,10 @@
-
 import { useEffect } from 'react';
 import { BookOpen, Award, BookMarked } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import SectionObserver from '@/components/SectionObserver';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const Biography = () => {
   useEffect(() => {
@@ -17,7 +17,22 @@ const Biography = () => {
       <div className="container mx-auto px-4 md:px-6 py-8">
         <SectionObserver>
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-8">Full Biography</h1>
+            <div className="relative mb-12">
+              <img
+                src="/profile-cover.jpg"
+                alt="Dr. Jonathan Blake in his lab"
+                className="w-full h-[300px] object-cover rounded-xl"
+              />
+              <div className="absolute -bottom-16 left-8">
+                <img
+                  src="/profile-portrait.jpg"
+                  alt="Dr. Jonathan Blake portrait"
+                  className="w-32 h-32 rounded-full border-4 border-white shadow-lg"
+                />
+              </div>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-8 mt-20">Full Biography</h1>
             
             <div className="prose prose-lg max-w-none space-y-6 text-navy-700">
               <p>
@@ -105,6 +120,19 @@ const Biography = () => {
               </div>
             </div>
 
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img
+                src="/lab-work.jpg"
+                alt="Dr. Blake working in quantum computing lab"
+                className="rounded-lg shadow-lg"
+              />
+              <img
+                src="/speaking.jpg"
+                alt="Dr. Blake speaking at a conference"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+
             <div className="mt-12">
               <Button 
                 onClick={() => window.history.back()} 
@@ -117,6 +145,7 @@ const Biography = () => {
           </div>
         </SectionObserver>
       </div>
+      <Footer />
     </div>
   );
 };
